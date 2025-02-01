@@ -1,0 +1,58 @@
+.modal {
+    position: fixed;
+    /* Фіксоване положення */
+    top: 50%;
+    /* Відступ зверху */
+    left: 50%;
+    /* Відступ зліва */
+    transform: translate(-50%, -50%);
+    /* Центрування модального вікна */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90vh;
+    /* Обмеження висоти на 90% висоти екрану */
+    overflow: hidden;
+    /* Відключає прокручування всередині модального вікна */
+    z-index: 1000;
+    /* Щоб модальне вікно було поверх іншого контенту */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Прозорий фон за модальним вікном */
+    z-index: 999;
+    /* Нижчий рівень, ніж у самого модального вікна */
+}
+
+.image {
+    width: 100%;
+    /* Зображення займає всю ширину */
+    height: auto;
+    /* Висота пропорційно до ширини */
+    object-fit: contain;
+    /* Зберігає пропорції і не обрізає зображення */
+    max-height: 80vh;
+    /* Максимальна висота зображення, щоб воно не вийшло за межі екрану */
+    margin-top: 20px;
+    /* Відступ зверху для зображення, щоб залишити місце для кнопки */
+}
+
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    /* Відступ зверху */
+    right: 10px;
+    /* Відступ зліва */
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1100;
+}

@@ -1,0 +1,13 @@
+.imageCard {
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Використовуємо cover, щоб зображення не деформувалося */
+}
