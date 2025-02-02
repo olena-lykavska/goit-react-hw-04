@@ -1,4 +1,6 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
+import { toast } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css";
 import css from "./SearchBar.module.css";
 
 // Компонент SearchBar для введення запиту пошуку
@@ -8,6 +10,16 @@ const SearchBar = ({ onSubmit }) => {
   // Функція для обробки події submit форми
   const handleSubmit = (e) => {
     e.preventDefault(); // Запобігаємо перезавантаженню сторінки при відправці форми
+
+    // Перевіряємо, чи поле вводу не є порожнім перед відправкою
+    if (!input.trim()) {
+      toast.error("Поле пошуку не може бути порожнім!", {
+        position: "top-right", // Розташування повідомлення
+        autoClose: 3000, // Автоматичне закриття через 3 секунди
+      });
+      return; // При помилці не виконуємо onSubmit
+    }
+
     onSubmit(input); // Передаємо значення input в функцію onSubmit (яка була передана як пропс)
     setInput(""); // Очищаємо поле вводу після відправки запиту
   };
@@ -26,4 +38,5 @@ const SearchBar = ({ onSubmit }) => {
   );
 };
 
-export default SearchBar; 
+export default SearchBar;
+

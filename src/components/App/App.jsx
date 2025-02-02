@@ -8,6 +8,10 @@ import ImageModal from "../ImageModal/ImageModal";
 import fetchImages from "../../api/fetchImages"; 
 import css from "./App.module.css"; 
 
+// Імпорт компоненту для toast-повідомлень та стилів
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const App = () => {
   // Оголошуємо стейти:
   const [images, setImages] = useState([]); // Массив для збереження зображень
@@ -61,6 +65,8 @@ const App = () => {
       {selectedImage && (
         <ImageModal image={selectedImage} onClose={() => setSelectedImage(null)} />
       )}
+      
+      <ToastContainer /> {/* Контейнер для відображення toast-повідомлень */}
     </div>
   );
 };
